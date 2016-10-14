@@ -1,11 +1,7 @@
 {
-  "presets": [
-    "es2015",
-    "stage-0",
-    "react"
-  ],
-  "plugins": [
-    "transform-runtime",
-    "transform-class-properties"
+  "plugins": ["react", "es2016"],
+  "ignore": [
+    "foo.js",
+    "bar/**/*.js"
   ]
 }

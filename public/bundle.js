@@ -54,27 +54,35 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _List = __webpack_require__(172);
+
+	var _List2 = _interopRequireDefault(_List);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CommentBox = _react2.default.createClass({
 	  displayName: 'CommentBox',
 
-	  constructor: function constructor(props) {
-	    //super(props);
-	    state: {};
-	  },
+	  // constructor: function(props) {
+	  //   //super(props);
+	  //   state: {};
+	  // },
 
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'commentBox' },
-	      _react2.default.createElement(List, { url: this.props.url }),
-	      _react2.default.createElement(Friends, { names: this.props.name })
+	      this.props.urlList.map(function (d) {
+	        return _react2.default.createElement(_List2.default, { url: d.url });
+	      })
 	    );
 	  }
 	});
 
-	_reactDom2.default.render(_react2.default.createElement(CommentBox, null), document.getElementById('root'));
+	var urlList = ['url1', 'url2']; //TODO: get these from db
+
+
+	_reactDom2.default.render(_react2.default.createElement(CommentBox, { urlList: urlList }), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -21442,6 +21450,73 @@
 
 	module.exports = ReactDOMNullInputValuePropHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"babel-runtime/core-js/object/get-prototype-of\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"babel-runtime/helpers/classCallCheck\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"babel-runtime/helpers/createClass\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"babel-runtime/helpers/possibleConstructorReturn\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"babel-runtime/helpers/inherits\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var List = function (_React$Component) {
+	  (0, _inherits3.default)(List, _React$Component);
+
+	  function List(props) {
+	    (0, _classCallCheck3.default)(this, List);
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props));
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  (0, _createClass3.default)(List, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'a',
+	        { href: this.props.url },
+	        this.props.url
+	      );
+	    }
+	  }]);
+	  return List;
+	}(_react2.default.Component);
+
+	exports.default = List;
 
 /***/ }
 /******/ ]);
