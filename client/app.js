@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 var CommentBox = React.createClass({
+  constructor: function(props) {
+    //super(props);
+    state: {};
+  },
+
   render: function() {
     return (
       <div className='commentBox'>
-        Commentbox.
+        <List url={this.props.url}/>
+        <Friends names={this.props.name}/>
       </div>
     )
   }

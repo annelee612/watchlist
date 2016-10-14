@@ -59,11 +59,17 @@
 	var CommentBox = _react2.default.createClass({
 	  displayName: 'CommentBox',
 
+	  constructor: function constructor(props) {
+	    //super(props);
+	    state: {};
+	  },
+
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'commentBox' },
-	      'Commentbox.'
+	      _react2.default.createElement(List, { url: this.props.url }),
+	      _react2.default.createElement(Friends, { names: this.props.name })
 	    );
 	  }
 	});
